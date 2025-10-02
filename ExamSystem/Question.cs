@@ -21,7 +21,7 @@ namespace ExamSystem
             AnsList = new AnswerList();
         }
         public abstract void ShowQuestion();
-        public abstract void CheckedValue(string input);
+        public abstract bool CheckValue(string input);
 
         public override string ToString()
         {
