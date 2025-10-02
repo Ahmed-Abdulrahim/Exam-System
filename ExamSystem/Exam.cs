@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace ExamSystem
 {
     public enum ExamMode { Queued , Started , Finished}
+    public delegate void ExamStartedHandler(object sender, ExamArgs e);
     internal abstract class Exam : ICloneable, IComparable<Exam>
     {
         public Subject? SubjectForExam { get; set; }
@@ -16,6 +17,7 @@ namespace ExamSystem
         public ExamMode ExamMode { get; set; } = ExamMode.Queued;
         public Dictionary<Question, AnswerList> QuestionAnswers { get; set; }
         = new Dictionary<Question, AnswerList>();
+        public event ExamStartedHandler ExamStarted;
         public Exam(Subject _subject , QuestionList _questionList ,TimeSpan _DurationForExam)
         {
             SubjectForExam = _subject ;
@@ -23,6 +25,10 @@ namespace ExamSystem
             DurationForExam = _DurationForExam ;
         }
         public abstract void ShowExam();
+        public virtual void OnExamStarted(string msg)
+        {
+            ExamStarted?.Invoke(this, new ExamArgs(this, msg));
+        }
         public virtual void Start()
         {
             ExamMode = ExamMode.Started;
