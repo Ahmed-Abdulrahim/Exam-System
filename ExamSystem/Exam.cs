@@ -9,9 +9,9 @@ namespace ExamSystem
 {
     public enum ExamMode { Queued , Started , Finished}
     public delegate void ExamStartedHandler(object sender, ExamArgs e);
-    internal abstract class Exam : ICloneable, IComparable<Exam>
+    public abstract class Exam : ICloneable, IComparable<Exam>
     {
-        public Subject? SubjectForExam { get; set; }
+        public Subject SubjectForExam { get; set; }
         public QuestionList QuestionListForExam { get; set; }
         public TimeSpan DurationForExam { get; set; }
         public ExamMode ExamMode { get; set; } = ExamMode.Queued;
@@ -33,6 +33,7 @@ namespace ExamSystem
         {
             ExamMode = ExamMode.Started;
             Console.WriteLine($"Exam For {SubjectForExam?.Name} has started , Time limit: {DurationForExam.TotalMinutes} minutes");
+            OnExamStarted("");
         }
         public virtual void Finished() 
         {

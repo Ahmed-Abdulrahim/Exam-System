@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class ChooseMultipleAnswer :Question
+    public class ChooseMultipleAnswer :Question
     {
         public ChooseMultipleAnswer(string _header, string _body, int _mark) : base(_header, _body, _mark)
         {
@@ -31,7 +31,7 @@ namespace ExamSystem
 
         public override void ShowQuestion()
         {
-            Console.WriteLine($"[Choose Multiple Answer] \n  {Body}        ({Mark} Mark)");
+            Console.WriteLine($"[Choose Multiple Answer] \n {Header} {Body}        ({Mark} Mark)");
             for (int i = 0; i < AnsList.Count; i++)
             {
                 Console.WriteLine($"{i + 1}) {AnsList[i].Body}");

@@ -26,7 +26,7 @@ namespace ExamSystem
 
         public override void ShowQuestion()
         {
-            Console.WriteLine($"[True/False] \n  {Body}    ({Mark} Mark)");
+            Console.WriteLine($"[True/False] \n {Header} {Body}    ({Mark} Mark)");
             Console.WriteLine("1) True");
             Console.WriteLine("2) False");
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class QuestionList :List<Question>
+    public class QuestionList :List<Question>
     {
         string filePath;
         public QuestionList(string _filPath) 

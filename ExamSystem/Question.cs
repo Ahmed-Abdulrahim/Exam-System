@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace ExamSystem
 {
-    internal abstract class Question :ICloneable , IComparable<Question>
+    public abstract class Question :ICloneable , IComparable<Question>
     {
         public string Header { get; set; }
         public string Body { get; set; }

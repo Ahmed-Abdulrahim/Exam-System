@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExamSystem
 {
-    internal class Answer
+    public class Answer
     {
         public string Body { get; set; }
         public bool IsCorrect { get; set; }
@@ -21,7 +21,7 @@ namespace ExamSystem
             return $"{Body} {(IsCorrect ? "Correct" : "" )}";
         }
     }
-    class AnswerList : List<Answer> 
+    public class AnswerList : List<Answer> 
     {
       
     }
