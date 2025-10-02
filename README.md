@@ -4,7 +4,6 @@
 ![.NET 8](https://img.shields.io/badge/.NET-8.0-blueviolet?logo=dotnet)
 ![C#](https://img.shields.io/badge/C%23-12.0-239120?logo=csharp)
 ![Console App](https://img.shields.io/badge/Type-Console%20App-lightgrey)
-![License](https://img.shields.io/github/license/Ahmed-Abdulrahim/Exam-System)
 
 ---
 
