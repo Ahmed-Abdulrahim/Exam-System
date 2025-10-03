@@ -19,8 +19,20 @@ namespace ExamSystem
             foreach (var q in QuestionListForExam)
             {
                 q.ShowQuestion();
-                Console.WriteLine("Your answer: ");
-                Console.ReadLine(); 
+                Console.Write("Your answer: ");
+                string input = Console.ReadLine()?.Trim() ?? "";
+
+                bool checkResult = false;
+                try
+                {
+                    checkResult = q.CheckValue(input);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Invalid answer format: " + ex.Message);
+                }
+
+                
                 Console.WriteLine();
             }
 

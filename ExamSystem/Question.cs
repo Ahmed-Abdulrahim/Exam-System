@@ -44,7 +44,7 @@ namespace ExamSystem
         {
             Question q = (Question)this.MemberwiseClone();
             q.AnsList = new AnswerList();
-            foreach (Answer a in q.AnsList) 
+            foreach (Answer a in this.AnsList)
             {
                 q.AnsList.Add(new Answer(a.Body, a.IsCorrect));
             }

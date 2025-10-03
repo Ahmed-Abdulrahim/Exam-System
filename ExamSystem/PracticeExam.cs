@@ -22,9 +22,8 @@ namespace ExamSystem
                 q.ShowQuestion();
                 Console.Write("Your answer: ");
                 string input = Console.ReadLine();
-                var res = ParseInput(q, input);
-                bool checkResult = q.CheckValue(res as string);
-                if(checkResult)
+                bool checkResult = q.CheckValue(input);
+                if (checkResult)
                     score+=(int)q.Mark;
                 Console.WriteLine(checkResult ? " Correct!" : " Wrong!");
                 Console.WriteLine(" Correct Answers:");
